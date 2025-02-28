@@ -112,13 +112,17 @@ section h2 {
 }
 
 /* Pied de page */
+/* Footer */
 footer {
     background-color: #2d2b2b;
     color: #ecf0f1;
     padding: 1rem 0;
     text-align: center;
-    margin-top: 40px;
     font-size: 1rem;
+    width: 100%;
+    position: absolute;
+    bottom: 0; /* Fixe le footer au bas de la page */
+    left: 0;
 }
 
 /* Style pour le bouton "En savoir plus" */
@@ -197,4 +201,39 @@ footer {
 
 #contact button:hover {
     background-color: #8e44ad; /* Rose-violet plus foncé */
+}
+
+#realisation-mission {
+    background: #2c3e50;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+#realisation-mission div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#realisation-mission section {
+    flex: 1;
+    margin: 10px;
+    padding: 15px;
+    text-align: center;
+    border-radius: 8px;
+    background-color: #292929;
+    color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+#realisation-mission img {
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+#realisation-mission img:hover {
+    transform: scale(1.1);
+     
+    filter: drop-shadow(
+        20px 10px 4px rgba(0,0,0,0.3)
+    );
 }
