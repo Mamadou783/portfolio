@@ -1,518 +1,200 @@
-    /* Style général */
-    body {
-        font-family: 'Roboto', sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #1e1f20;
-        color: #333;
-        line-height: 1.6;
-    }
-    
-    /* Style de l'en-tête */
-    header {
-        background-color: #2c3e50;
-        color: white; /* Change la couleur du texte pour qu'il soit plus lisible */
-        padding: 2rem 0;
-        text-align: center;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        background-image: url('../image/banniere.jpg'); /* Remplace 'ton-image.jpg' par le chemin de ton image */
-        background-size: cover;  /* Cette propriété permet de faire en sorte que l'image couvre toute la zone du header */
-        background-position: center; /* Centre l'image dans le header */
-        background-repeat: no-repeat; /* Empêche l'image de se répéter */
-        height: 200px; /* Ajuste la hauteur du header */
-        position: relative; /* Nécessaire pour ajouter un overlay */
-    }
-    
-    /* Overlay semi-transparent pour renforcer la lisibilité */
-    header::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.4); /* Fond noir semi-transparent */
-        z-index: 1; /* Place cet overlay sous le texte */
-    }
-    
-    /* Style du texte */
-    header h1, header h2 {
-        position: relative; /* Positionne le texte au-dessus de l'overlay */
-        z-index: 2; /* S'assure que le texte est visible */
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Ajoute une ombre au texte */
-    }
-    
-    /* Pour le titre principal */
-    header h1 {
-        font-size: 2.5rem; /* Augmente la taille pour le rendre plus visible */
-        margin-bottom: 0.5rem;
-    }
-    
-    /* Pour le sous-titre */
-    header h2 {
-        font-size: 1.5rem;
-        color: #58abff; /* Une couleur différente pour contraster avec le titre principal */
-    }
-    
-    /* Style de la barre de navigation */
-    nav {
-        background-color: #2e2b2b;
-        padding: 10px 0;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        position: fixed;
-        top: 0;
-        width: 100%;
-        z-index: 1000; /* Pour s'assurer que la barre reste au-dessus du contenu */
-    }
-    
-    
-    nav ul {
-        list-style: none;
-        text-align: center;
-        margin: 0;
-        padding: 0;
-    }
-    
-    nav ul li {
-        display: inline-block;
-        margin-right: 20px;
-    }
-    
-    nav ul li:last-child {
-        margin-right: 0;
-    }
-    
-    nav ul li a {
-        color: #ecf0f1;
-        text-decoration: none;
-        font-weight: bold;
-        padding: 10px 20px;
-        transition: background-color 0.3s ease;
-    }
-    
-    nav ul li a:hover {
-        background-color: #2980b9;
-        border-radius: 5px;
-    }
-    
-    /* Style des sections */
-    section {
-        color: white;
-        margin: 30px auto;
-        padding: 20px;
-        max-width: 1000px;
-        background-color: #2e2b2b;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
-        
-    }
-    
-    
-    
-    section h2 {
-        font-size: 1.8rem;
-        margin-bottom: 1rem;
-        color: #58abff;
-        border-left: 4px solid #3498db;
-        padding-left: 10px;
-    }
-    
-    /* Pied de page */
-    footer {
-        background-color: #2c3e50;
-        color: #ecf0f1;
-        padding: 1rem 0;
-        text-align: center;
-        margin-top: 40px;
-        font-size: 1rem;
-    }
-    
-    /* Style pour le bouton "En savoir plus" */
-    .btn {
-        display: inline-block;
-        padding: 10px 20px;
-        margin-top: 10px;
-        background-color: #007BFF; /* Bleu clair, change la couleur selon tes préférences */
-        color: white;
-        text-decoration: none; /* Retirer le soulignement du lien */
-        border-radius: 5px;
-        text-align: center;
-        font-size: 16px;
-        transition: background-color 0.3s ease;
-    }
-    
-    .btn:hover {
-        background-color: #0056b3; /* Bleu foncé au survol */
-    }
-    
-    /* Style pour la section du formulaire */
-    #contact {
-        background-color: #2e2b2b; /* Fond clair */
-        padding: 30px;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        max-width: 600px;
-        margin: 0 auto;
-        
-    }
-    
-    #contact h2 {
-        text-align: center;
-        font-size: 2em;
-        color: #58abff;
-        margin-bottom: 20px;
-    }
-    
-    /* Style pour les labels */
-    #contact label {
-        font-size: 1em;
-        color: #ffffff;
-        display: block;
-        margin-bottom: 8px;
-    }
-    
-    /* Style pour les champs de texte */
-    #contact input[type="text"], #contact input[type="email"], #contact textarea {
-        width: 100%;
-        padding: 12px;
-        font-size: 1em;
-        margin-bottom: 15px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        box-sizing: border-box;
-        transition: border-color 0.3s ease;
-    }
-    
-    /* Ajout de l'effet au focus */
-    #contact input[type="text"]:focus, 
-    #contact input[type="email"]:focus, 
-    #contact textarea:focus {
-        border-color: #007BFF; /* Changer la couleur de bordure au focus */
-        outline: none;
-    }
-    
-    /* Style pour le bouton */
-    #contact button {
-        background-color: #007BFF; /* Bleu clair */
-        color: white;
-        padding: 12px 20px;
-        border: none;
-        border-radius: 5px;
-        font-size: 1.1em;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-        width: 100%;
-    }
-    
-    #contact button:hover {
-        background-color: #0056b3; /* Bleu foncé au survol */
-    }
-    
-    /* Marges pour les champs et le bouton */
-    #contact input, #contact textarea, #contact button {
-        margin-top: 5px;
-        margin-bottom: 20px;
-    }
-    
-    #a-propos {
-        
-        padding: 30px;
-        background: linear-gradient(to bottom right, #2c3e50, #34495e);
-    }
-    
-    #a-propos p {
-        line-height: 1.8;
-        font-size: 1.1rem;
-        color: #dcdcdc;
-    }
-    
-    #bts-sio {
-        background-color: #2e2b2b;
-        color: white;
-        margin: 30px auto;
-        padding: 20px;
-        max-width: 1000px;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    }
-    
-    #bts-sio div {
-        flex-wrap: wrap; /* Les sections s'adaptent mieux aux petits écrans */
-    }
-    
-    #bts-sio p {
-        margin-bottom: 15px;
-        line-height: 1.8;
-        color: #e0e0e0;
-    }
-    
-    #bts-sio ul li {
-        margin-bottom: 10px;
-    }
-    
-    #bts-sio ul {
-        padding-left: 20px;
-        list-style: circle;
-    }
-    
-    #bts-sio h3 {
-        font-size: 1.5rem;
-        color: #58abff;
-        margin-bottom: 10px;
-    }
-    
-    #bts-sio h2 {
-        font-size: 2rem;
-        color: #58abff;
-        margin-bottom: 20px;
-        text-align: center;
-    }
-    
-    
-    #ecole-entreprise {
-        background: linear-gradient(to right, #3e3e3e, #292929);
-        padding: 40px;
-        border-radius: 10px;
-    }
-    
-    #ecole-entreprise .logo-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-        text-align: center;
-    }
-    
-    #ecole-entreprise a img {
-        border-radius: 8px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    }
-    
-    #ecole-entreprise p {
-        font-size: 1rem;
-        line-height: 1.8;
-        color: #dcdcdc;
-    }
-    
-    #realisation-mission {
-        background: #2c3e50;
-        border-radius: 10px;
-        padding: 30px;
-    }
-    
-    #realisation-mission div {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-    
-    #realisation-mission section {
-        flex: 1;
-        margin: 10px;
-        padding: 15px;
-        text-align: center;
-        border-radius: 8px;
-        background-color: #292929;
-        color: #fff;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    }
-    #realisation-mission img {
-        border-radius: 10px;
-        transition: transform 0.3s ease;
-    }
-    
-    #realisation-mission img:hover {
-        transform: scale(1.1);
-         
-        filter: drop-shadow(
-            20px 10px 4px rgba(0,0,0,0.3)
-        );
-    }
-    
-    #projet {
-        background: linear-gradient(to top, #292929, #3e3e3e);
-        padding: 30px;
-        border-radius: 10px;
-    }
-    
-    #projet div {
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-        gap: 20px;
-    }
-    
-    #projet img {
-        border-radius: 10px;
-        transition: transform 0.3s ease;
-    }
-    
-    #projet img:hover {
-        transform: scale(1.1);
-        /*box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);*/
-        filter: drop-shadow(
-            20px 10px 4px rgba(0,0,0,0.3)
-        );
-    }
-    
-    #projet .btn {
-        margin-top: 15px;
-        display: block;
-        text-transform: uppercase;
-        font-weight: bold;
-    }
-    
-    #veille-technologique {
-        background: linear-gradient(to right, #292929, #3e3e3e);
-        padding: 40px;
-        border-radius: 10px;
-        background-color: #f9f9f9;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        margin: 2rem auto;
-        max-width: 900px;
-        font-family: 'Arial', sans-serif;
-        line-height: 1.6;
-        color: #333;
-    }
-    
-    #veille-technologique section {
-        margin-bottom: 20px;
-        background: #292929;
-        border-radius: 8px;
-        padding: 15px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    }
-    
-    #veille-technologique h4 {
-        color: #58abff;
-        margin-bottom: 10px;
-    }
-    
-    #veille-technologique p {
-        line-height: 1.6;
-        font-size: 1rem;
-        color: #dcdcdc;
-    }
-    
-    .dynamic-section {
-        opacity: 0; /* Les sections sont masquées par défaut */
-        transform: translateY(20px); /* Décalées vers le bas */
-        transition: all 0.6s ease-in-out; /* Douce transition */
-    }
-    
-    .dynamic-section.appear {
-        opacity: 1; /* Elles deviennent visibles */
-        transform: translateY(0); /* Elles reprennent leur position initiale */
-    }
-    
-    a i {
-        font-size: 25px;  /* Taille de l'icône */
-        color: #ffffff;   /* Couleur de l'icône */
-        margin-right: 8px; /* Espace entre l'icône et le texte (si texte aussi) */
-    }
-    
-    /* Styles spécifiques à la section Présentation */
-    #presentation {
-        background: linear-gradient(to bottom, #2c3e50, #34495e); /* Dégradé pour correspondre au style général */
-        padding: 30px;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        margin: 30px auto;
-        color: #dcdcdc;
-        max-width: 1000px; /* Uniformité avec les autres sections */
-    }
-    
-    #presentation h2 {
-        font-size: 2rem;
-        color: #58abff; /* Titre bleu clair pour s'aligner avec les autres sections */
-        text-align: center;
-        margin-bottom: 20px;
-        text-transform: uppercase; /* Uniformité dans le style des titres */
-    }
-    
-    #presentation p {
-        font-size: 1.1rem;
-        line-height: 1.8;
-        text-align: justify;
-    }
-    
-    /* Styles spécifiques à la section Cahier des charges */
-    #cahierdescharges {
-        background: linear-gradient(to bottom, #292929, #3e3e3e); /* Fond sombre en dégradé */
-        padding: 30px;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        margin: 30px auto;
-        color: #dcdcdc;
-        max-width: 1000px;
-    }
-    
-    #cahierdescharges h2 {
-        font-size: 2rem;
-        color: #58abff;
-        text-align: center;
-        margin-bottom: 20px;
-        text-transform: uppercase;
-    }
-    
-    #cahierdescharges p {
-        font-size: 1.1rem;
-        line-height: 1.8;
-        text-align: justify;
-    }
-    
-    /* Section des schémas */
-    #BDD {
-        background: linear-gradient(to bottom, #292929, #3e3e3e); /* Dégradé sombre */
-        padding: 40px;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        margin: 30px auto;
-        max-width: 1000px;
-        color: #dcdcdc;
-        text-align: center;
-    }
-    
-    #BDD h2 {
-        font-size: 2rem;
-        color: #58abff; /* Titre bleu clair */
-        margin-bottom: 20px;
-        text-transform: uppercase;
-    }
-    
-    /* Conteneur d'images */
-    .image-container {
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap; /* Les images passent à la ligne si l'écran est petit */
-        gap: 20px;
-    }
-    
-    /* Style pour les images */
-    .image-container figure {
-        text-align: center;
-        margin: 0;
-    }
-    
-    .image-container img {
-        max-width: 100%; /* Les images ne dépasseront jamais leur conteneur */
-        height: auto;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    
-    /* Effet au survol */
-    .image-container img:hover {
-        transform: scale(1.05); /* Agrandissement subtil */
-        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4);
-    }
-    
-    /* Texte sous les images */
-    .image-container figcaption {
-        font-size: 1rem;
-        color: #bfc9ca;
-        margin-top: 10px;
-        text-transform: capitalize;
-        font-style: italic;
-    }
+/* Style général */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1e1e1e; /* Noir doux */
+    color: #e5e5e5; /* Texte en gris clair pour contraster */
+    line-height: 1.6;
+}
+
+/* Style de l'en-tête */
+header {
+    background-color: #2d2b2b; /* Noir légèrement atténué */
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-image: url('../image/881415294f_50170557_code-html-sashkin-adobe-stock.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 200px;
+    position: relative;
+}
+
+/* Overlay semi-transparent pour renforcer la lisibilité */
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+/* Style du texte */
+header h1, header h2 {
+    position: relative;
+    z-index: 2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+header h2 {
+    font-size: 1.5rem;
+    color: #9b59b6; /* Rose-violet */
+}
+
+/* Style de la barre de navigation */
+nav {
+    background-color: #3c3c3c; /* Gris foncé */
+    padding: 10px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+nav ul li a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #9b59b6; /* Rose-violet au survol */
+    border-radius: 5px;
+}
+
+/* Style des sections */
+section {
+    color: white;
+    margin: 30px auto;
+    padding: 20px;
+    max-width: 1000px;
+    background-color: #2d2b2b;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+}
+
+section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #9b59b6; /* Rose-violet */
+    border-left: 4px solid #9b59b6;
+    padding-left: 10px;
+}
+
+/* Pied de page */
+footer {
+    background-color: #2d2b2b;
+    color: #ecf0f1;
+    padding: 1rem 0;
+    text-align: center;
+    margin-top: 40px;
+    font-size: 1rem;
+}
+
+/* Style pour le bouton "En savoir plus" */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #9b59b6; /* Rose-violet */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #8e44ad; /* Rose-violet plus foncé */
+}
+
+/* Style pour la section du formulaire */
+#contact {
+    background-color: #2d2b2b;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#contact h2 {
+    text-align: center;
+    font-size: 2em;
+    color: #9b59b6;
+    margin-bottom: 20px;
+}
+
+/* Style pour les labels */
+#contact label {
+    font-size: 1em;
+    color: #ffffff;
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* Style pour les champs de texte */
+#contact input[type="text"], #contact input[type="email"], #contact textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 1em;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+#contact input[type="text"]:focus, 
+#contact input[type="email"]:focus, 
+#contact textarea:focus {
+    border-color: #9b59b6; /* Rose-violet */
+    outline: none;
+}
+
+#contact button {
+    background-color: #9b59b6;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+#contact button:hover {
+    background-color: #8e44ad; /* Rose-violet plus foncé */
+}
