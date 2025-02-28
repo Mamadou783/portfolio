@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - BTS SIO SLAM</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Chargement du script EmailJS -->
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        // Créer un IntersectionObserver pour surveiller les sections
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Ajouter la classe 'appear' lorsque l'élément est visible
+                    entry.target.classList.add("appear");
+                } else {
+                    // Retirer la classe 'appear' lorsqu'il sort du champ de vision
+                    entry.target.classList.remove("appear");
+                }
+            });
+        });
+    
+        // Cible toutes les sections observer
+        const sections = document.querySelectorAll(".dynamic-section");
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    });
+
+    </script>
+    
+    <script type="text/javascript">
+        // Initialisation de l'EmailJS avec clé publique
+        (function (){
+            emailjs.init("MaSLCAoEgNMHiWWEb"); // Clé publique Emailjs
+        })();
+    
+        function sendEmail(e) {
+            e.preventDefault(); // Empêche le rechargement de la page
+    
+            // Récupération des valeurs du formulaire
+            const name = document.getElementById("name").value;
+            const firstname = document.getElementById("firstname").value;
+            const email = document.getElementById("email").value;
+            const message = document.getElementById("message").value;
+    
+            // Affichage des valeurs récupérées dans la console pour débogage
+            console.log({
+                name: name,
+                firstname: firstname,
+                email: email,
+                message: message
+            });
+    
+            // Envoi des données via EmailJS
+            emailjs.send("service_2vhbn9v", "template_m9rga3j", {
+                name: name,
+                firstname: firstname,
+                email: email,
+                message: message
+            })
+            .then(function(response) {
+                alert("Votre message a bien été envoyé !");
+                document.getElementById("contact-form").reset(); // Réinitialisation du formulaire
+            }, function(error) {
+                alert("Une erreur s'est produite. Veuillez réessayer.");
+                console.log("Erreur:", error);
+            });
+    
+            console.log("Fin de la fonction sendEmail");
+        }
+    </script>
+</head>
+<body>
+
+<header>
+    <h1>Portfolio - CISSOKHO Mamadou</h1>
+    <h2>BTS SIO SLAM</h2>
+</header>
+
+<!-- Barre de navigation -->
+<nav>
+    <ul>
+        <li><a href="#a-propos">À propos</a></li>
+        <li><a href="#bts-sio">BTS SIO</a></li>
+        <li><a href="#ecole-entreprise">Ecole / Entreprise</a></li>
+        <li><a href="#realisation-mission">Missions</a></li>
+        <li><a href="#projet">Projets</a></li>
+        <li><a href="#veille-technologique">Veille Technologique</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- Section À propos -->
+<section id="a-propos" class="dynamic-section">
+    <h2>À propos</h2>
+    <p>Étudiant en BTS SIO, spécialité SLAM, je combine le développement d'applications avec des compétences acquises lors de mon alternance chez Assurup et à l'école. 
+    Je maîtrise des langages comme JavaScript, Java, PHP, HTML, CSS...
+    Mon objectif est de continuer à évoluer dans le domaine du développement.</p>
+    <a href="image/Mamadou_CV.pdf" class="btn" target="_blank">Télécharger mon CV</a>
+</section>
+
+<!-- BTS SIO -->
+<section id="bts-sio" class="dynamic-section">
+    <h2>BTS SIO</h2>
+    <p>Le <strong>BTS Services Informatiques aux Organisations (SIO)</strong> 
+    est une formation professionnel de niveau bac+2, qui forme des techniciens capables de concevoir, 
+    développer et maintenir des systèmes informatiques au service des entreprises. Ce diplôme propose deux spécialités:</p>
+    <div style="display: flex; flex-direction: row; gap: 20px;">
+        <section>
+            <h3>SLAM : Solutions Logicielles et Applications Métiers</h3>
+            <p>Axée sur le développement de logiciels et d'applications métiers, cette spécialité couvre :</p>
+            <ul>
+                <li>Conception et développement d’applications web, mobiles et desktop.</li>
+                <li>Gestion de bases de données (SQL, MySQL).</li>
+                <li>Analyse des besoins métiers et rédaction de cahiers des charges.</li>
+                <li>Développement sécurisé et maintenance des applications.</li>
+            </ul>
+        </section>
+        <section>
+            <h3>SISR : Solutions d’Infrastructure, Systèmes et Réseaux</h3>
+            <p>Orientée vers l’administration des infrastructures informatiques, cette spécialité couvre :</p>
+            <ul>
+                <li>Installation et configuration de réseaux (LAN, WAN).</li>
+                <li>Maintenance et sécurisation des systèmes informatiques.</li>
+                <li>Supervision des serveurs et gestion des droits d'accès.</li>
+                <li>Développement de scripts pour automatiser les tâches administratives.</li>
+            </ul>
+        </section>
+    </div>
+    <p>Les compétences acquises durant le BTS SIO permettent d'accéder à des postes tels que <strong>développeur d'applications</strong>, 
+    <strong>technicien réseau</strong>, ou encore <strong>administrateur systèmes</strong>. 
+    Cette formation est un tremplin vers des études supérieures ou une intégration rapide dans le monde professionnel.</p>
+</section>
+
+<!-- Section Ecole / Entreprise -->
+<section id="ecole-entreprise" class="dynamic-section">
+    <h2>Ecole / Entreprise</h2>
+   <div style="display: flex; flex-direction: row; gap: 20px;">
+    <section style = "width: 750px;">
+        <a href = "https://www.ensitech.eu/"><img src = "image/logo_ensitech.jpg" alt = "logo ensitech" width = "88px"/></a>
+        <P> L'ENSITECH à Saint-Quentin-en-Yvelines (SQY) est spécialisée dans les formations en informatique. L'école propose des cursus en alternance dans des domaines tels que le développement, les systèmes et réseaux, et la cybersécurité. Grâce à un enseignement axé sur la pratique</P>
+        </section>
+        <section style = "width: 750px;">
+            <a href = "https://www.assurup.com/"><img src = "image/assurup.jpg" alt = "logo Sodexo" width = "92px"/></a>
+        <p>Assurup est une entreprise basée à Levallois-Perret, spécialisée dans l'assurance professionnelle pour startups, 
+            indépendants et entreprises. Elle propose une plateforme digitale permettant de souscrire et gérer des contrats en ligne rapidement. 
+            Grâce à ses partenariats avec de nombreux assureurs.
+        </p>
+        </section>
+   </div>
+</section>
+
+<!-- Section Realisation ou Mission -->
+<section id="realisation-mission" class="dynamic-section">
+    <h2>Missions</h2>
+    <div style="display: flex; flex-direction: row; gap: 20px;">
+        <section>
+            <p>Portfolio</p>
+        </section>
+        <section>
+            <p>Mission 2</p>
+        </section>
+        <section>
+            <p>Mission 3</p>
+        </section>
+</div>
+<div style="display: flex; flex-direction: row; gap: 20px;">
+    <section>
+        <p>Mission 4</p>
+    </section>
+    <section>
+        <p>Mission 5</p>
+    </section>
+    <section>
+        <p>Mission 6</p>
+    </section>
+</div>
+</section>
+
+<!-- Section Projet -->
+<section id="projet" class="dynamic-section">
+    <h2>Projets</h2>
+    <div style="display: flex; flex-direction: row; gap: 20px;">
+    <section style="text-align: center;">
+        <img src = "image/stockm.jpg.webp" alt = "logo StockM" width = "200px"/>
+        <p style="text-align: center;">site E-commerce<br/>
+        (Client leger)</p>
+        <a href="page/clientleger.html" class="btn">En savoir plus</a>
+    </section>
+
+    <section style="text-align: center;">
+        <img src = "image/A.png" alt = "logo Gestion de stock" width = "200px"/>
+        <p style="text-align: center;">Application de gestion de stock<br/>
+        (Client lourd)</p>
+        <a href="page/clientlourd.html" class="btn">En savoir plus</a>
+    </section>
+    </div>
+</section>
+
+<!-- Section Veille Technologique -->
+<section id="veille-technologique" class="dynamic-section">
+    <h2>Veille Technologique : Minage de Cryptomonnaies</h2>
+
+    <section>
+        <h4>Qu'est-ce que la veille technologique ?</h4>
+        <p>
+            La veille technologique, élément de la veille stratégique, consiste à surveiller les avancées technologiques 
+            et les innovations dans un domaine particulier. Elle inclut la collecte, l'analyse et le partage d'informations 
+            techniques permettant de comprendre les évolutions et de s'adapter à de nouvelles tendances.
+        </p>
+    </section>
+
+    <section>
+        <h4>Les principaux outils de ma veille</h4>
+        <p>
+            Ma veille technologique repose sur des outils variés. J'utilise :
+            <ul>
+                <li><strong>Google Alerts</strong> : pour recevoir des mises à jour quotidiennes sur le minage de cryptomonnaies.</li>
+                <li><strong>Le Journal du Coin</strong> : un site spécialisé qui fournit des actualités et des analyses sur les cryptomonnaies.</li>
+                <li><strong>Reddit</strong> : notamment les forums spécialisés dans les discussions techniques sur le minage.</li>
+            </ul>
+        </p>
+    </section>
+
+    <section>
+        <h4 style="text-align: center;">Thème 1 : Qu'est-ce que le minage de cryptomonnaies ?</h4>
+        <p>
+            Le minage de cryptomonnaies est le processus par lequel les transactions réalisées sur une blockchain 
+            sont vérifiées et ajoutées à un registre public. Cela repose sur la résolution de problèmes mathématiques complexes 
+            par des machines spécialisées, appelées <strong>ASICs</strong> ou <strong>GPU</strong>. Les mineurs sont récompensés 
+            par des fractions de cryptomonnaie pour leur contribution à la sécurité et au bon fonctionnement du réseau.
+        </p>
+    </section>
+
+    <section>
+        <h4 style="text-align: center;">Thème 2 : Les aspects techniques du minage</h4>
+        <p>
+            <strong>1. Algorithmes de consensus</strong><br/>
+            Les blockchains utilisent des algorithmes de consensus comme le <i>Proof of Work (PoW)</i>, 
+            où les mineurs doivent résoudre des équations complexes pour valider les blocs.
+        </p>
+        <p>
+            <strong>2. Puissance de calcul</strong><br/>
+            Le minage nécessite une grande puissance de calcul, ce qui implique l’utilisation d’équipements 
+            performants comme des ASICs ou des GPU haut de gamme.
+        </p>
+        <p>
+            <strong>3. Consommation énergétique</strong><br/>
+            L’un des principaux défis du minage est sa consommation énergétique importante, 
+            avec des impacts écologiques significatifs. Certains projets explorent des alternatives 
+            plus durables, comme le <i>Proof of Stake (PoS)</i>.
+        </p>
+    </section>
+
+    <section>
+        <h4 style="text-align: center;">Thème 3 : Les applications et impacts du minage</h4>
+        <p>
+            <strong>1. Sécurisation des réseaux</strong><br/>
+            Le minage est essentiel pour garantir la sécurité et la fiabilité des transactions sur une blockchain.
+        </p>
+        <p>
+            <strong>2. Opportunités financières</strong><br/>
+            Il permet aux mineurs de générer des revenus en participant activement au réseau, 
+            bien que les coûts initiaux puissent être élevés (matériel, électricité).
+        </p>
+        <p>
+            <strong>3. Enjeux écologiques</strong><br/>
+            La consommation d’énergie massive pousse à une réflexion sur des solutions plus respectueuses de l’environnement.
+        </p>
+    </section>
+</section>
+
+<!-- Section contact -->
+<section id="contact" class="dynamic-section">
+    <h2>Contactez-moi</h2>
+    <form id="contact-form" onsubmit="sendEmail(event)">
+        <label for="name">Nom :</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="firstname">Prénom :</label>
+        <input type="text" id="firstname" name="firstname" required>
+
+        <label for="email">Email :</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message :</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit">Envoyer</button>
+    </form>
+</section>
+
+
+
+
+<footer>
+    <p>Portfolio CISSOKHO Mamadou - BTS SIO SLAM - 2024/2025</p>
+</footer>
+
+</body>
+</html>
