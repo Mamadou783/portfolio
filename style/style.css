@@ -6,6 +6,7 @@ body {
     background-color: #1e1e1e; /* Noir doux */
     color: #e5e5e5; /* Texte en gris clair pour contraster */
     line-height: 1.6;
+    
 }
 
 /* Style de l'en-tête */
@@ -111,7 +112,7 @@ section h2 {
     padding-left: 10px;
 }
 
-/* Pied de page */
+
 /* Footer */
 footer {
     background-color: #2d2b2b;
@@ -120,8 +121,8 @@ footer {
     text-align: center;
     font-size: 1rem;
     width: 100%;
-    position: absolute;
-    bottom: 0; /* Fixe le footer au bas de la page */
+    position: fixed;
+    bottom: 0;
     left: 0;
 }
 
