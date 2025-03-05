@@ -119,11 +119,8 @@ footer {
     color: #ecf0f1;
     padding: 1rem 0;
     text-align: center;
+    margin-top: 40px;
     font-size: 1rem;
-    width: 100%;
-    position: fixed;
-    bottom: 0;
-    left: 0;
 }
 
 /* Style pour le bouton "En savoir plus" */
@@ -223,7 +220,7 @@ footer {
 }
 
 #realisation-mission {
-    background: #2c3e50;
+    background: #2d2b2b;
     border-radius: 10px;
     padding: 30px;
 }
